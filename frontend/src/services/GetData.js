@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const url = 'http://localhost:3001/users'
-const review_url = 'http://localhost:3001/reviews'
-const taskUrl = 'http://localhost:3001/tasks'
+const url = '/users'
+const review_url = '/reviews'
+const taskUrl = '/tasks'
 
 let token = null
 const setToken = newToken => {
