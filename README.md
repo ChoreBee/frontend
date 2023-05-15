@@ -20,3 +20,6 @@ Dependencies
 - Update dependencies 
    - npm update
 
+npm run build
+ cp -r build ../backend
+
