@@ -9,8 +9,8 @@ const AboutUs = () => {
        <Header />
         <div className= "backround">
         <div className= "containerer">
-        <h1 className= "header">About us <div style={{color: 'orange' }}>    jeeeeeee    </div> </h1>
-       <p className= "text">blaablalblablblalbablabl</p>
+        <h1 className= "header">About us <div style={{color: 'orange' }}>    </div> </h1>
+       <p className= "text">Under construction</p>
       
 
 

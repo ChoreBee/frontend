@@ -1,27 +1,35 @@
 import { React, useState } from "react";
 import Header from "./Main/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ApplyForTask = (props) => {
 
-    const [salary, setSalary] = useState()
+  let location = useLocation();
+  const propsData = location.state;
+  console.log(propsData);
+    
+  const [salary, setSalary] = useState()
     const [cv, setCv] = useState()
 
-    const loggedUserJSON = window.localStorage.getItem('loggedUser')
-    //console.log(loggedUserJSON)
-    console.log(props.data)
-    console.log(props)
-  
-
-      const handleSubmit = () => {
-        console.log('submittaa')
-
-      }
       const handleSalaryChange = (event) => {
         setSalary(event.target.value)
       }
       const handleCVChange = (event) => {
         setCv(event.target.value)
+      }
+
+      const submitProposal = () => {
+
+        const loggedUserJSON = window.localStorage.getItem('loggedUser')
+
+
+        if(loggedUserJSON !== null){
+          console.log('submittaa')
+        }
+        else{
+          console.log('jeee')
+          alert("You need to be logged in to apply for a task!");
+        }
       }
 
 
@@ -32,23 +40,26 @@ const ApplyForTask = (props) => {
 
         <h1 className="h1">Submit a proposal </h1>
 
-          <h3>Job details</h3>
-          <p>headline</p>
-          <p>description</p>
-          <p>view task posting</p>
+          <h3>Task details</h3>
+          <p>Headline: {propsData.headline}</p>
+          <p>Description: {propsData.description}</p>
+          <p>Location: {propsData.location}</p>
+          <Link to='/taskdetails' state={propsData}>view task posting
+          </Link>
+          <p/>
 
             <div className="inputFields">
                     <label for="salary">What is the rate you would complete this task for? </label>
-                    <input type="text" placeholder="palkka numero " name="salary" onChange={handleSalaryChange} required/>
+                    <input type="text" placeholder={`Original proposal: ${propsData.salary}`} name="salary" onChange={handleSalaryChange} required/>
                     
                     <label for="cv">Cover Letter (optional) </label>
-                    <input type="text" placeholder="cv" name="cv" onChange={handleCVChange} required/>
+                    <input type="text" name="cv" onChange={handleCVChange} required/>
 
                     <label for="files">Attach files</label>
                     <input type="text"  name="files"  required/>
 
                 <br/>
-                <Link to="/task"> <button type="button" className="button" onClick={handleSubmit()}>Submit</button></Link>
+                <button type="button" className="button" onClick={() => submitProposal()}>Submit</button>
              </div>
         </form>
     </div>     

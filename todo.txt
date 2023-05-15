@@ -1,0 +1,31 @@
+
+
+KIRJAUTUMINEN
+- ei voi tehä käyttäjää ilman kaikkia tietoja signupissa
+- sign up syntymäaika scroll arvona 
+
+PROFIILI
+- laita tai vaihda profiilikuvaa 
+
+BROWSE 
+- enemmän arvoja filtteröintiin
+- hae taskia -> taskin tekijälle ilmoitus -> voi hyväksyä tai hylätä sen 
+- filtteröinti pienet ja isot kirjaimet samaan 
+
+REVIEWS
+- tee arvostelu tietylle käyttäjälle
+
+TASKERS-SIVU
+- näytetään tekijöitä
+- filtteröinti hakuun
+- ehdoita taskia tekijälle -> saa ilmoituksen -> voi hyväksyä tai hylätä
+
+APPLY TASK
+- tee tiedostojen lataamisnappi 
+
+TASKDETAILS
+- loop reviewit ja taskin categoria sivulle
+
+
+
+ 

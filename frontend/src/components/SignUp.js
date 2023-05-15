@@ -13,6 +13,7 @@ const SignUp = () => {
     const [age, setAge] = useState()
     const [address, setAddress] = useState()
     const [password, setPassword] = useState()
+    const [selectValue, setSelectValue] = useState()
     
 
     const userObject = {
@@ -51,19 +52,33 @@ const SignUp = () => {
       const handlePasswordChange = (event) => {
         setPassword(event.target.value)
       }
+      const handleChange = (event) => {
+        this.setSelectValue(event.target.value);
+        console.log(selectValue)
+      }
 
       let years = []
       let max = 2023
+      let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      let days = []
+      let maxDays = 31
 
       const scrollYears = () => {
         while(max > 1920){
           years.push(max)
           max = max - 1
-
         }
       }
 
+      const scrollDays = () => {
+        while(maxDays > 0){
+          days.push(maxDays)
+          maxDays = maxDays - 1
+        }
+        console.log(days)
+      }
 
+    
     return(
         <div className="background">
         <Header />
@@ -95,17 +110,40 @@ const SignUp = () => {
                     <div class="yearWrapper">
                       {scrollYears()}
                       <div>
-                      <label for="years">Years</label>
+                      <label for="years">Year</label>
                       <br/>
-                          {years.map(year => {
-                            return(
-                                <select>
-                                  <option value={year}>{year}</option>
-                                </select>
-                            )
-                          })}
+                            <select >
+                            {years.map(year => 
+                              <option onChange={handleChange} value={selectValue}>{year}</option>
+                              )}
+                            </select>
                       </div>
                     </div>
+                    <div class="monthWrapper">
+                      <div>
+                      <label for="months">Month</label>
+                      <br/>
+                            <select >
+                            {months.map(month => 
+                              <option onChange={handleChange} value={selectValue}>{month}</option>
+                              )}
+                            </select>
+                      </div>
+                    </div>
+                    <div class="dayWrapper">
+                      {scrollDays()}
+                      <div>
+                      <label for="days">Day</label>
+                      <br/>
+                            <select >
+                            {days.map(day => 
+                              <option onChange={handleChange} value={selectValue}>{day}</option>
+                              )}
+                            </select>
+                          
+                      </div>
+                    </div>
+                    <br/>
 
                     <label for="address">Address</label>
                     <input type="text" placeholder=" Address" name="address" onChange={handleAddressChange} required/>
@@ -124,5 +162,3 @@ const SignUp = () => {
 
 
 export default SignUp;
-
- 

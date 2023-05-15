@@ -65,7 +65,7 @@ const Login = (details) => {
                 </div>
 
             </form> 
-            <Link to="/home"><button onClick={() => window.localStorage.clear()} >logout</button></Link>
+            <Link to="/"><button onClick={() => window.localStorage.clear()} >logout</button></Link>
         </div>
     )
 }

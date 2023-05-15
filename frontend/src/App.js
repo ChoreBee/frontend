@@ -16,6 +16,7 @@ import Browse from "./components/Browse";
 import AboutUs from "./components/AboutUs";
 import NewReviewForm from "./components/newReviewForm";
 import ApplyForTask from "./components/ApplyForTask";
+import TaskDetails from "./components/TaskDetails";
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
     <div>
   <BrowserRouter>
       <Routes>
-      <Route path="/home" element={<MainPage/>}/>
+      <Route path="/" element={<MainPage/>}/>
       <Route path="/profile" element={<ProfilePage/>}/>
       <Route path="/editprofile" element={<EditProfile/>}/>
       <Route path="/task" element={<Task/>}/>
@@ -40,7 +41,8 @@ function App() {
       <Route path="/browse" element={<Browse/>}/>
       <Route path="/aboutus" element={<AboutUs/>}/>
       <Route path="/newreview" element={<NewReviewForm/>}/>
-      <Route path="/applyfortask" element={<ApplyForTask/>}/>
+      <Route path="/applyfortask" element={<ApplyForTask />}/>
+      <Route path="/taskdetails" element={<TaskDetails />}/>
     
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignUp/>}/>

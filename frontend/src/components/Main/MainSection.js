@@ -10,7 +10,7 @@ const MainSection = () => {
         <div className= "backround">
         <div className= "container">
         <h1 className= "header">Welcome to <div style={{color: 'orange' }}>    ChoreBee    </div> </h1>
-       <p className= "text">blaablalblablblalbablabl</p>
+       <p className= "text">Under construction</p>
       
       
        <img src="https://iili.io/HXb7oOX.png" 

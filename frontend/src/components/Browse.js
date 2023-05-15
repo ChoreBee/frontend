@@ -2,14 +2,11 @@ import Header from "./Main/Header"
 import task from "../services/GetData.js"
 import { useEffect, React, useState } from "react";
 import { Link } from "react-router-dom";
-import ApplyForTask from "./ApplyForTask";
-
 
 const Browse = () => {
 
     const [tasks, setTasks] = useState([])
     const [filter, setFilter] = useState([])
-    const [appliedTask, setAppliedTask] = useState([])
 
     const [clean, setClean] = useState(false)
     const [yard_work, setYard] = useState(false)
@@ -29,24 +26,14 @@ const Browse = () => {
         })
       }, [])
 
+
       const handleFilterChange = (event) => {
         setFilter(event.target.value)
       }  
 
-      const applyForTask = (taskApply) => {
-        setAppliedTask(taskApply)
-        console.log(appliedTask)
-        return(
-            <ApplyForTask data={appliedTask} />
-        )
-      }
-
-      const filteredByLoc = tasks
-      
-      //filter ? tasks.filter(task => task.location.includes(filter)) : tasks
-      //filteredByLoc.length
-
-      let length = tasks.length
+      const filteredByLoc = filter ? tasks.filter(task => task.location.includes(filter)) : tasks
+      let length = filteredByLoc.length
+      //let length = tasks.length
 
 
     return (
@@ -130,7 +117,7 @@ const Browse = () => {
                                     </div>
                                     <br/>
                                 </div>
-                                <Link to="/applyfortask"><button  className="button" onClick={() => applyForTask(task)}>Apply</button></Link>
+                                <Link to='/applyfortask' state={task}><button  className="button">Apply</button></Link>
                                 <hr/>
                 </div> </div> </div>
             )
