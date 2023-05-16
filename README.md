@@ -10,6 +10,7 @@ Run the development
 - Clone the project from: https://github.com/ChoreBee/ChoreBee.git
 - Start the frontend in localhost:3000 
 - - npm start
+- During the development change the backend urls to: 'http://localhost:3001/service'
 
 
 
