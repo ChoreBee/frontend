@@ -20,3 +20,9 @@ Dependencies
 - Update dependencies 
    - npm update
 
+
+Making a new production build 
+
+- npm run build 
+- cp -r build ../backend
+- commit to branch taskDetails and it will build the application automatically in DigitalOcean 
