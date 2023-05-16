@@ -21,7 +21,7 @@ Dependencies
    - npm update
 
 
-Making a new production build 
+A new production build 
 
 - npm run build 
 - cp -r build ../backend
